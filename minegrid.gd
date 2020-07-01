@@ -77,8 +77,9 @@ func show_all():
 	
 func on_reset():
 	nb_tiles_shown = 0
-	$VBoxContainer/TexVictoire.visible = false
-	$VBoxContainer/TexGameOver.visible = false
+	$Panel.visible = false
+	$TexVictoire.visible = false
+	$TexGameOver.visible = false
 
 	# Reset tiles
 	for i in range(nb_lines):
@@ -111,12 +112,14 @@ func on_reset():
 func on_win():
 	print("VICTOIRE !")
 	show_all()
-	$VBoxContainer/TexVictoire.visible = true
+	$Panel.visible = true
+	$TexVictoire.visible = true
 	
 func on_explode():
 	print("GAME OVER")
 	show_all()
-	$VBoxContainer/TexGameOver.visible = true
+	$Panel.visible = true
+	$TexGameOver.visible = true
 
 func on_user_show(x: int, y: int):
 	print("Pressed: %d %d" % [x, y])
